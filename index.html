@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>СатКом Инфо Онлайн</title>
+</head>
+
+<body>
+
+<video id="video" controls autoplay autoplay="autoplay" controls="controls"></video>
+<script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('playlist.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() { video.play(); });
+    </script>
+
+
+</body>
+</html>
